@@ -179,11 +179,18 @@ createShape = function( description ) {
 				);
 			}
 
-			shape = new Ammo.btBvhTriangleMeshShape(
-				triangle_mesh,
-				true,
-				true
-			);
+			// add
+
+			shape = new Ammo.btCompoundShape();
+
+			let triangle_mesh_shape = new Ammo.btBvhTriangleMeshShape( triangle_mesh, true, true );
+
+			_transform.setIdentity();
+
+			shape.addChildShape( _transform, triangle_mesh_shape );
+
+			//
+
 			_noncached_shapes[description.id] = shape;
 			break;
 
