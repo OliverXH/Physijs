@@ -1,4 +1,4 @@
-Physijs
+Physijs-es
 =======
 #### Physics plugin for [three.js](https://github.com/mrdoob/three.js)
 
